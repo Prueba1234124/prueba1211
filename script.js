@@ -5,6 +5,5 @@ fetch('data.json')
     });
 
 document.getElementById('btn-bienvenida').addEventListener('click', () => {
-    // Redirigir al catálogo
     window.location.href = 'catalogo.html';
 });
