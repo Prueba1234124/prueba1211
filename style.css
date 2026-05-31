@@ -1,32 +1,97 @@
-/* --- ESTILOS DEL CATÁLOGO --- */
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+/* --- ESTILOS DE LA PÁGINA DE INICIO (INDEX) --- */
+.body-inicio {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.contenedor-inicio {
+    text-align: center;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.contenedor-inicio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #F8F9FA;
+}
+
+#btn-bienvenida {
+    background-color: #4facfe;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+#btn-bienvenida:hover {
+    background-color: #0082ff;
+    transform: translateY(-2px);
+}
+
+/* --- ESTILOS DEL CATÁLOGO (AZUL ELEGANTE + RÚSTICO) --- */
 .body-catalogo {
-    display: block; /* Quitamos el centrado para esta página */
-    background: #0B132B; /* Azul nocturno muy elegante */
-    height: auto;
+    background: #0B132B; /* Azul oscuro elegante */
+    color: #F8F9FA;
     min-height: 100vh;
+    padding-bottom: 50px;
 }
 
 .header-rustico {
-    background-color: #050A1F; /* Azul casi negro */
-    border-bottom: 4px solid #B87333; /* Tono rústico cobre/bronce */
-    padding: 30px;
+    background-color: #050A1F; /* Azul profundo casi negro */
+    border-bottom: 4px solid #B87333; /* Línea de acento rústico/cobre */
+    padding: 35px 20px;
     text-align: center;
 }
 
 .header-rustico h1 {
     color: #F8F9FA;
-    margin: 0 0 15px 0;
-    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    font-size: 2rem;
+}
+
+.tag-beta {
+    background-color: #B87333; /* Tono rústico */
+    color: #050A1F;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 
 .btn-volver {
+    display: inline-block;
     color: #B87333;
     text-decoration: none;
     font-weight: bold;
-    border: 1px solid #B87333;
-    padding: 8px 15px;
+    border: 2px solid #B87333;
+    padding: 8px 20px;
     border-radius: 5px;
+    margin-top: 10px;
     transition: 0.3s;
 }
 
@@ -35,31 +100,52 @@
     color: #050A1F;
 }
 
+/* Títulos de Categorías */
+.seccion-titulo {
+    text-align: center;
+    color: #E0E1DD;
+    margin: 50px 0 25px 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.seccion-titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #B87333;
+    margin: 8px auto 0 auto;
+}
+
+/* Cuadrícula de carros */
 .grid-catalogo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 50px;
+    padding: 0 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .tarjeta-carro {
     background-color: #1C2541; /* Azul pizarra */
-    border: 1px solid #B87333; /* Borde rústico */
+    border: 1px solid rgba(184, 115, 51, 0.2);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .tarjeta-carro:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
+    border-color: #B87333; /* Resalta el borde cobre al pasar el mouse */
 }
 
 .tarjeta-carro img {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Composición panorámica para que luzcan las fotos */
+    height: 200px;
     object-fit: cover;
     border-bottom: 3px solid #B87333;
 }
@@ -71,15 +157,12 @@
 
 .info-carro h2 {
     color: #E0E1DD;
-    margin-top: 0;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 .info-carro p {
-    color: #A98467; /* Tono madera claro para la descripción */
-    font-size: 1rem;
+    color: #A98467; /* Tono madera/tierra suave para los textos */
+    font-size: 0.95rem;
     line-height: 1.5;
-}
-button:hover {
-    background-color: #0082ff;
 }
