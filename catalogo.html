@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Vehículos - Prototipo Beta</title>
+    <title>Catálogo - Prototipo Beta</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body-catalogo">
@@ -13,65 +13,56 @@
         <a href="index.html" class="btn-volver">Volver al inicio</a>
     </header>
     
-    <!-- SECCIÓN PICK-UPS -->
     <h2 class="seccion-titulo">Pick-ups</h2>
     <section class="grid-catalogo">
-        <div class="tarjeta-carro">
+        <!-- Tarjeta clickeable -->
+        <div class="tarjeta-carro" onclick="abrirModal('hilux')">
+            <div class="badge-disponible"><span class="punto-verde"></span> Disponible</div>
             <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Toyota Hilux">
             <div class="info-carro">
                 <h2>Toyota Hilux</h2>
-                <p>El rey de las carreteras y el trabajo pesado en Honduras. Indestructible y confiable.</p>
+                <p>Haz clic para ver más especificaciones.</p>
             </div>
         </div>
 
-        <div class="tarjeta-carro">
+        <div class="tarjeta-carro" onclick="abrirModal('dmax')">
+            <div class="badge-disponible"><span class="punto-verde"></span> Disponible</div>
             <img src="https://images.unsplash.com/photo-1622146939943-41f2382e21b7?auto=format&fit=crop&w=800&q=80" alt="Isuzu D-Max">
             <div class="info-carro">
                 <h2>Isuzu D-Max</h2>
-                <p>Poderoso motor de trabajo con excelente rendimiento de combustible para el día a día.</p>
+                <p>Haz clic para ver más especificaciones.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN CAMIONETAS -->
     <h2 class="seccion-titulo">Camionetas</h2>
     <section class="grid-catalogo">
-        <div class="tarjeta-carro">
+        <div class="tarjeta-carro" onclick="abrirModal('prado')">
+            <div class="badge-disponible"><span class="punto-verde"></span> Disponible</div>
             <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Toyota Prado">
             <div class="info-carro">
-                <h2>Toyota Land Cruiser Prado</h2>
-                <p>Comodidad familiar combinada con la capacidad de dominar cualquier terreno del país.</p>
-            </div>
-        </div>
-
-        <div class="tarjeta-carro">
-            <img src="https://images.unsplash.com/photo-1567113463300-1025f5d3761f?auto=format&fit=crop&w=800&q=80" alt="Ford Escape">
-            <div class="info-carro">
-                <h2>Ford Escape</h2>
-                <p>Una de las camionetas compactas más buscadas por su confort y estilo en la ciudad.</p>
+                <h2>Toyota Prado</h2>
+                <p>Haz clic para ver más especificaciones.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN TURISMOS -->
-    <h2 class="seccion-titulo">Turismos</h2>
-    <section class="grid-catalogo">
-        <div class="tarjeta-carro">
-            <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80" alt="Honda Civic">
-            <div class="info-carro">
-                <h2>Honda Civic</h2>
-                <p>Un clásico de las calles hondureñas. Conducción dinámica, juvenil y repuestos accesibles.</p>
+    <!-- VENTANA EMERGENTE (Oculta por defecto) -->
+    <div id="ventana-info" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <img id="modal-img" class="modal-img" src="" alt="Carro">
+            <h2 id="modal-titulo" style="color: #F8F9FA;">Cargando...</h2>
+            <p id="modal-desc" style="color: #A98467; margin-top: 10px;"></p>
+            
+            <div class="modal-specs">
+                <ul id="lista-especificaciones">
+                    <!-- Los datos se inyectarán por JavaScript -->
+                </ul>
             </div>
         </div>
+    </div>
 
-        <div class="tarjeta-carro">
-            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=800&q=80" alt="Toyota Corolla">
-            <div class="info-carro">
-                <h2>Toyota Corolla</h2>
-                <p>La definición total de durabilidad y economía. Ideal para el transporte urbano.</p>
-            </div>
-        </div>
-    </section>
-
+    <script src="script.js"></script>
 </body>
 </html>
